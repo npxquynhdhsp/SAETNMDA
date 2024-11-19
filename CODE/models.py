@@ -4,7 +4,7 @@ import tensorflow as tf
 from tensorflow.keras.backend import l2_normalize, maximum
 from params import args
 
-l_alpha = 0.75 #Q chon tam
+l_alpha = 1 #Q chon tam
 
 def triplet_loss1(y_true, y_pred, miemb_size = args.miemb_size, diemb_size = args.diemb_size):
     def loss_(y_true, y_pred):
