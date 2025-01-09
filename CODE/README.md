@@ -67,3 +67,4 @@ MiRNA-Disease Association Prediction Based on Stacked Auto-Encoders and Triplet 
         2.2. Run ```train_TripletNet2_dis_k.py```
         2.3. Run ```kethop_kfold_va_dis_k_2_loai.py```.
     - For All in one in Independent test or De novo miRNAs: Run ```Inde_Test.py``` or ```Deno_mi.py```.
+  * Updated: This repository is implemented for the old version of this paper which used imbalanced training datasets. Please send email to me to download the newest version.   
