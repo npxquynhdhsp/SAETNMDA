@@ -23,10 +23,13 @@ if db == 'HMDD2':
     if type_eval == 'dis_k_gl':
         set_dis = np.arange(1,5431)  # gl
     tile = 30  # ti le mau am, duong trong cac triplet, tile = -1 la lay het. Ko phai ti le am duong nhu bt.
+    fi_train_test = '../IN/TRAIN_TEST/kfold/' + 'A from Q18,kernel goc(binh thuong)/'
 else:
     temp = '_' + db
     set_dis = [3, 5, 9]
     tile = 15 # Q 50
+    if db == 'HMDD3':
+        fi_train_test = '../IN/TRAIN_TEST_HMDD3/kfold/'
 if type_eval == 'dis_k':
     nloop = 1
     # dis_k_koxoa = '_koxoa'
@@ -56,12 +59,13 @@ else:
     fi_feature = '../IN/Q18.3' + temp + '/' + type_eval + '/'
 fi_A = '../IN/Q18.3' + temp + '/' + type_eval + '/'
 fi_out = './OUT Q_' + db + '/' + type_eval + '/' + dir_temp
+
 print('dir_temp',dir_temp)
 print('fi_feature',fi_feature)
 
 # %%
 def parameter_parser():
-    parser = argparse.ArgumentParser(description="Q23_TripletNetwork_MDA.")
+    parser = argparse.ArgumentParser(description="SAETNMDA")
     parser.add_argument("--fi_feature",
                         nargs="?",
                         default=fi_feature,
@@ -74,6 +78,10 @@ def parameter_parser():
                         nargs="?",
                         default=fi_out,
                         help="fi_out.")
+    parser.add_argument("--fi_train_test",
+                        nargs="?",
+                        default=fi_train_test,
+                        help="fi_train_test.")
     parser.add_argument("--db",
                        default=db)
     parser.add_argument("--type_eval",
