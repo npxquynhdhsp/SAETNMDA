@@ -133,8 +133,8 @@ def dis_auto_encoder(x_train):
     adam = Adam(learning_rate=0.001)
     autoencoder.compile(optimizer=adam, loss='mse')
     autoencoder.fit(x_train, x_train, epochs=500, batch_size=64, shuffle=True)
-    miRNA_encodeds = encoder.predict(x_train)
-    return miRNA_encodeds
+    disease_encodeds = encoder.predict(x_train)
+    return disease_encodeds
 
 def dis_auto_encoder2(x_train):
     input = layers.Input(512)
@@ -146,8 +146,8 @@ def dis_auto_encoder2(x_train):
     adam = Adam(learning_rate=0.001)
     autoencoder.compile(optimizer=adam, loss='mse')
     autoencoder.fit(x_train, x_train, epochs=500, batch_size=64, shuffle=True)
-    miRNA_encodeds = encoder.predict(x_train)
-    return miRNA_encodeds
+    disease_encodeds = encoder.predict(x_train)
+    return disease_encodeds
 
 def dis_auto_encoder3(x_train):
     input = layers.Input(256)
@@ -159,8 +159,8 @@ def dis_auto_encoder3(x_train):
     adam = Adam(learning_rate=0.001)
     autoencoder.compile(optimizer=adam, loss='mse')
     autoencoder.fit(x_train, x_train, epochs=500, batch_size=64, shuffle=True)
-    miRNA_encodeds = encoder.predict(x_train)
-    return miRNA_encodeds
+    disease_encodeds = encoder.predict(x_train)
+    return disease_encodeds
 
 def tripletNET_2(args):
     in1 = keras_layers.Input(args.didim)
